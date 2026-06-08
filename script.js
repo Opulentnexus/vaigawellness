@@ -19,3 +19,5 @@ function showDetails(btn) {
 function closeDetails() {
     document.getElementById('detailsModal').classList.remove('active');
 }
+
+
