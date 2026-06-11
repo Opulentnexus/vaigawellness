@@ -350,7 +350,7 @@
     <div class="service-card"
       data-title="Nasal Therapy for Head and Sense Organs"
       data-image="nasya.png"
-      data-description="Nasya is an Ayurvedic therapy in which medicated herbal oils are administered through the nasal passages to cleanse, nourish and reiuvenate the head, sinuses and nervous system."
+      data-description="Nasya is an Ayurvedic therapy in which medicated herbal oils are administered through the nasal passages to cleanse, nourish and rejuvenate the head, sinuses and nervous system."
       data-link="https://wa.me/919961100115?text=Hi, I would like to book Nasal Therapy for Head and Sense Organs">
 
       <img src="nasya.png" alt="Nasal Therapy for Head and Sense Organs">
@@ -385,7 +385,7 @@
     <div class="service-card"
       data-title="Aroma Therapy"
       data-image="aroma.jpg"
-      data-description="Aroma therapy is the use of essential oils to promot healing and feeling of well being and relaxation. "
+      data-description="Aroma therapy is the use of essential oils to promote healing and feeling of well being and relaxation. "
       data-link="https://wa.me/919961100115?text=Hi, I would like to book Aroma Therapy">
 
       <img src="aroma.jpg" alt="Aroma Therapy">
@@ -453,27 +453,27 @@ function showTreatment(button){
 
   const card = button.closest('.service-card');
 
-  // GET DATA
   const title = card.dataset.title;
   const image = card.dataset.image;
   const description = card.dataset.description;
   const link = card.dataset.link;
 
-  // SET DATA
   document.getElementById('detailsTitle').innerText = title;
-  document.getElementById('detailsImg').src = image;
+ 
   document.getElementById('detailsDescription').innerText = description;
   document.getElementById('bookNowBtn').href = link;
 
-  // SHOW SECTION
-  const section = document.getElementById('treatmentDetails');
-  section.style.display = 'block';
+  const detailsSection = document.getElementById('treatmentDetails');
 
-  // SCROLL
-  section.scrollIntoView({
-    behavior: 'smooth'
-  });
+  // Move details section below clicked card
+  card.insertAdjacentElement('afterend', detailsSection);
+
+  detailsSection.style.display = 'block';
 }
+
+
+
+
 
 
 function hideTreatment(){
@@ -482,10 +482,10 @@ function hideTreatment(){
 
   section.style.display = 'none';
 
-  // GO BACK TO TREATMENTS
-  document.getElementById('services').scrollIntoView({
-    behavior:'smooth'
-  });
+
+
+
+  
 }
 
 </script>
