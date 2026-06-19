@@ -1296,7 +1296,21 @@ body{
   overflow-x:hidden;
 }
 
+@media (min-width:1025px){
 
+  body:has(.treatment-details-section[style*="block"])::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    z-index:999998;
+  }
+
+}
 
 
 
