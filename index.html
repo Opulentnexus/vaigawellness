@@ -415,6 +415,11 @@ Vamana, Virechana, Basti, Nasya, and Raktamokshana. It is appropriate for both d
 </section>
 
 
+
+
+
+
+
 <!-- HIDDEN DETAILS SECTION BELOW -->
 <section class="treatment-details-section" id="treatmentDetails">
 
@@ -468,11 +473,22 @@ function showTreatment(button){
   }
 
   // MOBILE
- else{
+else{
 
     card.appendChild(detailsSection);
 
     detailsSection.style.display = 'block';
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+
+            window.scrollTo({
+                top: detailsSection.offsetTop + 1000,
+                behavior: 'smooth'
+            });
+
+        });
+    });
 
 }
 }
