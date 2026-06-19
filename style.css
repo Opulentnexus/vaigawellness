@@ -1085,11 +1085,13 @@ padding-top: 100px;
   font-size:22px;
 }
 .view-btn{
-  background:#e9c46a;
+  background:#cecece;
   border:none;
   padding:10px 18px;
   border-radius:8px;
   cursor:pointer;
+font-weight:600;
+  font-size: 15px;
   font-family:"Montserrat", sans-serif;
 }
 
@@ -1125,9 +1127,13 @@ padding-top: 100px;
 }
 
 .details-content p{
+  max-width:800px;
+  margin:0 auto 25px;
+
   font-size:17px;
   line-height:1.9;
-  color:#555;
+
+  text-align:center;
 }
 
 .details-buttons{
@@ -1161,8 +1167,10 @@ padding-top: 100px;
 }
 
 .book-btn{
-  background:#e9c46a;
+  background:#cecece;
   color:#222;
+  font-weight:600;
+  font-size: 16px;
 }
 
 .less-btn{
@@ -1196,6 +1204,101 @@ padding-top: 100px;
     transform:translateY(0);
   }
 }
+
+.service-card{
+  overflow: visible;
+}
+
+.treatment-details-section{
+  margin-top:20px;
+  padding:20px;
+  background: white;
+  width:100%;
+}
+
+/* MOBILE */
+@media(max-width:1024px){
+
+  .treatment-details-section{
+    position:relative;
+    transform:none;
+    top:auto;
+    left:auto;
+    width:100%;
+  }
+
+}
+
+/* LAPTOP */
+@media(min-width:1025px){
+
+  .treatment-details-section{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:80%;
+    max-width:1000px;
+    z-index:99999;
+  }
+
+}
+
+@media (min-width:1025px){
+
+  .treatment-details-section{
+    position:fixed !important;
+
+    top:50% !important;
+    left:50% !important;
+
+    transform:translate(-50%, -50%) !important;
+
+    width:80%;
+    max-width:1000px;
+
+    max-height:80vh;
+    overflow-y:auto;
+
+    background:#fff;
+
+    padding:40px 50px;
+
+    border-radius:25px;
+
+    z-index:999999;
+
+    margin:0 !important;
+  }
+
+
+.details-buttons{
+    position:relative;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:max-content;
+
+    display:flex;
+    gap:15px;
+}
+
+
+
+}
+
+
+
+
+
+
+body{
+  overflow-x:hidden;
+}
+
+
+
+
 
 /* FULL TOP BACKGROUND SLIDER */
 /* TOP BACKGROUND (NAVBAR + HERO) */
@@ -1867,4 +1970,15 @@ body.modal-open{
       font-weight:500;
   }
 
+}
+
+
+
+
+.service-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* space between buttons */
+  margin-top: 15px;
 }
