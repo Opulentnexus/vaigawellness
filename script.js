@@ -16,8 +16,5 @@ function showDetails(btn) {
     document.getElementById('detailsModal').classList.add('active');
 }
 
-function closeDetails() {
-    document.getElementById('detailsModal').classList.remove('active');
-}
 
 
