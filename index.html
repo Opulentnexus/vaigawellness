@@ -451,22 +451,40 @@ function showTreatment(button){
   const card = button.closest('.service-card');
 
   const title = card.dataset.title;
-  const image = card.dataset.image;
   const description = card.dataset.description;
   const link = card.dataset.link;
 
   document.getElementById('detailsTitle').innerText = title;
- 
   document.getElementById('detailsDescription').innerText = description;
   document.getElementById('bookNowBtn').href = link;
 
   const detailsSection = document.getElementById('treatmentDetails');
 
-  // Move details section below clicked card
-  card.insertAdjacentElement('afterend', detailsSection);
+  // LAPTOP
+  if(window.innerWidth > 1024){
 
-  detailsSection.style.display = 'block';
+    detailsSection.style.display = 'block';
+
+  }
+
+  // MOBILE
+ else{
+
+    card.appendChild(detailsSection);
+
+    detailsSection.style.display = 'block';
+
 }
+}
+
+function hideTreatment(){
+
+  document.getElementById('treatmentDetails').style.display = 'none';
+
+}
+
+
+
 
 
 
@@ -1107,7 +1125,11 @@ function toggleMap(){
 </div>
 
 
-
+<script>
+function closeDetails() {
+  document.getElementById("detailsModal").classList.remove("active");
+}
+</script>
 
 
 
