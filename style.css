@@ -19,6 +19,161 @@ body{
   padding-top: 30px;
 }
 
+/* CONTAINER FOR THE INJECTED POPUP BUTTONS */
+#dynamicDetailsBody .details-buttons {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* PREMIUM BOOK NOW BUTTON STYLING */
+#dynamicDetailsBody .dynamic-popup-book-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 35px;
+    background: #b08968 !important; /* Premium brand gold/brown accent */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(176, 137, 104, 0.3);
+    min-width: 180px;
+    height: 54px;
+    cursor: pointer;
+}
+
+#dynamicDetailsBody .dynamic-popup-book-btn:hover {
+    background: #ff6600 !important; /* Vibrant interactive orange */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+}
+
+/* VIEW LESS BUTTON STYLING */
+#dynamicDetailsBody .less-btn {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 10px;
+    background: #222222;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    height: 54px;
+    cursor: pointer;
+}
+
+#dynamicDetailsBody .less-btn:hover {
+    background: #444444;
+}
+
+/* RESPONSIVE LAYOUT OPTIMIZATIONS FOR SMARTPHONES */
+@media (max-width: 768px) {
+    #dynamicDetailsBody .details-buttons {
+        flex-direction: column-reverse; /* Places Book Now on top of View Less on mobile */
+        gap: 12px;
+        justify-content: center;
+    }
+    #dynamicDetailsBody .dynamic-popup-book-btn, 
+    #dynamicDetailsBody .less-btn {
+        width: 100%; /* Spans full width on small interfaces */
+    }
+}
+
+
+
+/* ===============================
+   SERVICE BUTTONS
+================================= */
+
+.service-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.service-buttons button,
+.service-buttons a{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    height:48px;
+    padding:0 18px;
+
+    border:none;
+    border-radius:8px;
+
+    font-size:15px;
+    font-weight:700;
+    text-decoration:none;
+
+    cursor:pointer;
+    transition:all .3s ease;
+    box-sizing:border-box;
+}
+
+/* View More / View Process */
+
+.view-btn,
+.details-btn{
+    background:#222;
+    color:#fff;
+}
+
+.view-btn:hover,
+.details-btn:hover{
+    background:#111;
+}
+
+/* Book Now */
+
+.book-btn{
+    background:#25D366 !important;   /* WhatsApp Green */
+    color:#fff !important;
+}
+
+.book-btn:hover{
+    background:#1EBE5D !important;
+    color:#fff !important;
+}
+
+.book-btn:active{
+    background:#128C7E !important;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .service-buttons{
+        gap:8px;
+    }
+
+    .service-buttons button,
+    .service-buttons a{
+        height:42px;
+        padding:0 12px;
+        font-size:14px;
+        font-weight:700;
+        border-radius:8px;
+    }
+}
+
+
 
 
 /* WHITE CONTAINER */
@@ -44,7 +199,17 @@ body{
   align-items:center;
   font-family: "Satisfy", cursive;
   gap:8px;
+  margin-left: -34px;
 }
+
+.logo img {
+    width: 78px;
+    height: 45px;
+    object-fit: contain;
+    display: block;
+}
+
+
 
 /* MENU */
 .nav-links{
@@ -83,6 +248,30 @@ body{
 
 
 
+/* Mobile menu only */
+@media (max-width:768px){
+
+    .nav-links{
+        background:#fff !important;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .nav-links a{
+        color:#000 !important;
+    }
+
+    .nav-links a:hover{
+        color:#2e7d32 !important;
+    }
+
+}
+
+
+
+
+
+
+
 /* HERO SECTION */
 .hero{
   background: transparent;
@@ -110,7 +299,7 @@ body{
 /* TAG */
 .hero-text .tag{
   color: #ffffff;
-   font-size: 16px;
+   font-size: 27px;
   font-weight: 500;
   margin-bottom: 10px;
   animation-delay: 0.2s;
@@ -132,6 +321,7 @@ body{
 .hero-text .desc{
   margin-top: 15px;
   color: #f2f2f2;
+  font-size: 15px;
   animation-delay: 0.6s;
 }
 
@@ -310,10 +500,15 @@ padding-top: 100px;
   background:#b08968;
   color:#fff;
 }
-
+.primary:hover {
+  background: #ff6600; /* Darker brown */
+  color: #fff;
+  transform: translateY(-2px);
+}
 .secondary{
   border:1px solid #ccc;
-  color:#333;
+  color:#ff6600;
+  
 }
 
 /* RESPONSIVE */
@@ -346,7 +541,16 @@ padding-top: 100px;
 
 
 
-
+/* Laptop/Desktop */
+@media (min-width: 992px) {
+    .about-content h2 span {
+        display: block;
+        margin-top: 10px;
+        margin-left: 0;
+        font-size: 24px;
+        color: #b08968;
+    }
+}
 
 
 
@@ -381,16 +585,17 @@ padding-top: 100px;
   font-size:40px;
   margin-bottom:40px;
   color:#1b2a1b;
-  font-family:'Playfair Display', serif;
+ font-family:"Montserrat", sans-serif;
 }
 
 /* GRID */
 .yoga-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-  max-width:1100px;
-  margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    width:100%;
+    max-width:100%;
+    margin:0;
 }
 
 /* CARD */
@@ -497,13 +702,44 @@ padding-top: 100px;
   }
 }
 
+
+.yoga-book-btn{
+    text-align:center;
+    margin-top:40px;
+}
+
+.book-now-btn{
+    display:inline-block;
+    padding:14px 36px;
+    background:#b08968;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.book-now-btn:hover{
+    background:#ff6600;
+    transform:translateY(-3px);
+}
+
+
+
+
+
+
+
+
 /* SECTION */
 .testimonials{
   padding:100px 5%;
   background:#f8f5f0;
   text-align:center;
   padding-top: 10px;
-  margin-bottom: -30px;
+  margin-top: 60px;
+  margin-bottom: -40px;
 }
 
 .testimonials h2{
@@ -1030,7 +1266,7 @@ padding-top: 100px;
 
 /* SERVICES */
 .services{
-  padding:0 8% 40px;
+  padding: 0 5% 40px;
   margin-top:-40px;   /* pull section upward */
 
 }
@@ -1082,10 +1318,10 @@ padding-top: 100px;
 
 .services h2{
   margin-bottom:20px;   /* increase gap below heading */
-  font-size:22px;
+  font-size:28px;
 }
 .view-btn{
-  background:#cecece;
+  
   border:none;
   padding:10px 18px;
   border-radius:8px;
